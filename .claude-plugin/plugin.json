@@ -1,0 +1,23 @@
+{
+  "name": "supstack-para",
+  "version": "0.1.0",
+  "description": "PARA knowledge workflows for Supstack vaults. Captures sources, files them into Projects, Areas, Resources and Archives, answers from the vault, manages tasks and the agenda, reviews PARA state and lints the vault through the supstack-mcp server.",
+  "author": {
+    "name": "Ruslan Gagushin",
+    "url": "https://github.com/RuslanGagushin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/RuslanGagushin/supstack-skill",
+  "repository": "https://github.com/RuslanGagushin/supstack-skill",
+  "keywords": [
+    "supstack",
+    "para",
+    "pkm",
+    "second-brain",
+    "markdown",
+    "notes",
+    "tasks",
+    "agenda",
+    "mcp"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "supstack": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "github:RuslanGagushin/supstack-mcp",
+        "/path/to/my-vault"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ruslangagushin-supstack",
+  "description": "PARA knowledge workflows for Supstack vaults",
+  "owner": {
+    "name": "Ruslan Gagushin"
+  },
+  "plugins": [
+    {
+      "name": "supstack-para",
+      "source": "./",
+      "description": "PARA capture, ingest, query, save, task, review and lint workflows for a Supstack vault, driven by supstack-mcp.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ruslan Gagushin",
+        "url": "https://github.com/RuslanGagushin"
+      },
+      "homepage": "https://github.com/RuslanGagushin/supstack-skill",
+      "repository": "https://github.com/RuslanGagushin/supstack-skill",
+      "license": "MIT"
+    }
+  ]
+}

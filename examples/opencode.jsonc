@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Put this in the project from which you want to work with your Supstack vault.
+  // Replace the path with the folder that contains cards/ in your vault.
+  "skills": ["./skills", "C:/git/supstack-skill/skills"],
+  "mcp": {
+    "servers": {
+      "supstack": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "github:RuslanGagushin/supstack-mcp",
+          "C:/path/to/my-vault"
+        ]
+      }
+    }
+  }
+}
