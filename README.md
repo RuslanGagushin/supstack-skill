@@ -2,7 +2,7 @@
 
 PARA knowledge workflows for [Supstack](https://github.com/RuslanGagushin/supstack), driven by the [supstack-mcp](https://github.com/RuslanGagushin/supstack-mcp) server.
 
-Drop in a source and the agent captures it, files the derived notes into **Projects / Areas / Resources / Archives**, links them to their evidence, and keeps tasks in the Supstack grammar and agenda. Ask questions from the vault, save one selected insight, run a weekly PARA review, and lint the graph. Everything stays as plain Markdown in the vault the Supstack app already reads and writes.
+Drop in a source and the agent captures it, files the derived notes into **Projects / Areas / Resources / Archives**, links them to their evidence, and schedules tasks in the Supstack agenda. Ask questions from the vault, save one selected insight, run a weekly PARA review, and lint the graph. Notes stay as plain Markdown; agenda tasks live in `.supstack/tasks.jsonl`.
 
 The same skill files work as an OpenCode skill pack and as a Claude Code plugin; there is one source of truth in `skills/`.
 
@@ -12,7 +12,7 @@ The same skill files work as an OpenCode skill pack and as a Claude Code plugin;
 | --- | --- |
 | `supstack` | Setup/adoption of the PARA notebooks, preflight, routing and the shared operation contract. |
 | `supstack-ingest` | Source → immutable Inbox capture + linked canonical notes with provenance. |
-| `supstack-query` | Read-only answers from the vault, cited with `[[Note#Heading]]` and task lines. |
+| `supstack-query` | Read-only answers from the vault, cited with `[[Note#Heading]]` and task IDs. |
 | `supstack-save` | Keep one explicitly selected answer, decision or insight as a PARA note. |
 | `supstack-tasks` | Capture, schedule, close and triage tasks; read the agenda. Uses `add_task` / `update_task` only. |
 | `supstack-review` | Weekly PARA review: Inbox triage, project/area checks, archive proposals, digest. |
@@ -22,6 +22,7 @@ The same skill files work as an OpenCode skill pack and as a Claude Code plugin;
 
 - Node.js 20 or newer (used by `npx` to start the MCP server).
 - A Supstack vault folder: the one containing `cards/`.
+- `supstack-mcp` 0.2 or newer, using the Supstack 0.38+ task store. For an older vault, first use **Move tasks from notes to the agenda…** in the app.
 - OpenCode or Claude Code. The Supstack app itself does not have to be running; if it is, it picks up changes on disk.
 
 ## Install for OpenCode
@@ -74,8 +75,8 @@ A project note can itself be a notebook holding meeting notes, research and sub-
 ## A typical cycle
 
 1. **Capture** — paste a source or point at a file. `supstack-ingest` saves it verbatim in Inbox and writes linked notes into the right PARA bucket.
-2. **Act** — `supstack-tasks` puts next actions in the project note and schedules them; `agenda` shows the day and week.
-3. **Ask** — `supstack-query` answers from the vault with note/line citations and never writes.
+2. **Act** — `supstack-tasks` schedules next actions and links them to the project note when relevant; `agenda` shows the day and week.
+3. **Ask** — `supstack-query` answers from the vault with citations to notes and task IDs and never writes.
 4. **Keep** — `supstack-save` persists only the answer the user explicitly selects.
 5. **Review** — `supstack-review` proposes Inbox triage, overdue decisions and archives.
 6. **Check** — `supstack-lint` reports navigation and PARA hygiene problems; repairs are separate, reviewed operations.

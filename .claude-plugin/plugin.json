@@ -1,6 +1,6 @@
 {
   "name": "supstack-para",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "PARA knowledge workflows for Supstack vaults. Captures sources, files them into Projects, Areas, Resources and Archives, answers from the vault, manages tasks and the agenda, reviews PARA state and lints the vault through the supstack-mcp server.",
   "author": {
     "name": "Ruslan Gagushin",

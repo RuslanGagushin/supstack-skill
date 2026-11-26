@@ -48,7 +48,8 @@ project; the resource itself stays in Resources.
 Use the templates in `../templates/` as body structure. Keys:
 
 - **Project** — `_Goal_`, `## Definition of done`, `## Notes`, `## Links`, `## Log`.
-  Tasks live in the note itself with `SCHEDULED` / `DEADLINE` dates.
+  Link agenda tasks to the project note and set their `scheduled` or `deadline`
+  fields as needed.
 - **Area** — `_Standard_`, `## Responsibilities`, `## Routines`, `## Links`, `## Log`.
   Routines are recurring tasks with repeaters.
 - **Resource** — `_Summary_`, `## Key points`, `## Sources`, `## Related`, `## Log`.

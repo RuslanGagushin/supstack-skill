@@ -18,8 +18,8 @@ the vault. Its purpose is to keep a source, a claim and an inference distinct.
 ## Claims
 
 - Each material claim in a canonical note points to a source with a wikilink,
-  preferably to a heading: `[[Source note#Observations]]`. Add a note name and
-  line number when the evidence is a task or a specific passage.
+   preferably to a heading: `[[Source note#Observations]]`. Add a line number
+   for a specific passage or cite the task ID when the evidence is an agenda task.
 - Quotes must be verbatim. Never invent a quotation, date, locator, author or
   confidence level. If a detail is missing, write `unsupported`.
 - Keep contradictory evidence visible: name both positions and their sources.

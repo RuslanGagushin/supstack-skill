@@ -25,7 +25,7 @@ if (skillDirs.length !== 7) errors.push(`expected 7 skills, found ${skillDirs.le
 for (const dir of skillDirs) {
   const rel = path.join("skills", dir, "SKILL.md");
   const raw = await fs.readFile(path.join(root, rel), "utf8");
-  const fm = /^---\n([\s\S]*?)\n---\n/.exec(raw);
+  const fm = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw);
   if (!fm) { errors.push(`${rel}: missing frontmatter`); continue; }
   if (!/^name:\s*\S+/m.test(fm[1])) errors.push(`${rel}: missing name`);
   if (!/^description:/m.test(fm[1])) errors.push(`${rel}: missing description`);

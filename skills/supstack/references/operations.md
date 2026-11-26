@@ -24,7 +24,7 @@ arguments and expected result. Include:
 
 - note names to create or update, and their PARA notebook;
 - text to append or replace, copied verbatim from `read_note` when replacing;
-- task lines, states and dates;
+- task titles, IDs for updates, states and dates;
 - membership and tag changes;
 - a read budget and a stop condition for large inputs;
 - which steps depend on which (for example, a derived note links to a source
@@ -60,12 +60,13 @@ server-side rollback.
 6. Reorder, rename or archive last.
 
 After a write that changes a note used by a later step, re-read that note before
-continuing. Stop on the first error; do not continue with stale line numbers.
+continuing. Stop on the first error and re-read the target before retrying.
 
 ## 5. Verify and report
 
-- Re-read each changed note. Check notebook membership, tags, links resolving,
-  task state/date and the presence of the intended text.
+- Re-read each changed note. Check notebook membership, tags, links resolving
+  and the presence of the intended text. Check changed tasks with `list_tasks`
+  by their returned IDs, including state, dates and note links.
 - Confirm no unintended note was created or moved.
 - Report exact note names and paths returned by the tools, plus anything that
   failed or remains uncertain. Do not claim a git commit: the server never
@@ -75,8 +76,8 @@ continuing. Stop on the first error; do not continue with stale line numbers.
 
 - A failed `replace` means the note changed: re-read and rebuild that step.
 - A duplicate title means reuse or rename; never overwrite silently.
-- A wrong task line means re-query `list_tasks` / `read_note` and pass the
-  `title` together with the corrected `line`.
+- If a task ID no longer resolves, use `list_tasks` to find and confirm the
+  intended task before retrying.
 - Deleted notes can be recovered from `.trash`; other changes rely on the
   app's Undo or a manual reversal from the re-read text. If a change cannot be
   reversed confidently, say so instead of guessing.

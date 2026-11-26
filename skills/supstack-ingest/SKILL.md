@@ -72,9 +72,10 @@ For each derived note:
   sideways to existing notes that the source connects.
 - Quote verbatim only, and attach the source link to every material claim.
   Preserve contradictions and mark unsupported claims as unsupported.
-- If the source contains a task, either add it to the relevant note with
-  `add_task` (and a source link in `notes`) or list it as a candidate in the
-  preview. Do not auto-schedule it without user intent.
+- If the source contains a task, either link it to the relevant note with
+  `add_task` and its `note` argument, or list it as a candidate in the preview.
+  Keep the source link in the linked note's body. Do not auto-schedule it
+  without user intent.
 
 ## Preview, apply, verify
 

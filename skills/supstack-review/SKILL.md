@@ -43,7 +43,7 @@ Group findings by bucket:
 - **Tasks** — overdue, due today, waiting, and candidates for reschedule,
   `fwd`, or `cancel`.
 
-Present the digest in chat with note names and task lines. State clearly which
+Present the digest in chat with note names and task IDs. State clearly which
 items are observations and which are proposed changes. Do not repair anything
 from the digest alone.
 
@@ -56,7 +56,7 @@ For each item the user approves, draft the exact MCP call in the plan from
   status tags;
 - archive a project: follow the archive procedure in `para.md`; keep the note
   and its links, add a `## Log` line via `edit_note`;
-- task changes: `update_task` only, with `note` + `line` + `title`;
+- task changes: `update_task` with the stable `id` from `list_tasks` or `agenda`;
 - reschedule work into the coming week with `add_task` / `update_task` dates;
 - remove a stale `review-due` tag with `organize_note` once reviewed.
 

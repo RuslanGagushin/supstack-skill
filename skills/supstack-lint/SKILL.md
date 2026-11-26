@@ -29,10 +29,10 @@ link checks.
    from `read_note` metadata.
 3. **Frontmatter** — report `frontmatter_error` values, and notes whose
    `notebooks` metadata contains a missing target.
-4. **Tasks** — use `list_tasks` with `states: ["all"]` and `due: "overdue"` to
-   count overdue work; report open tasks with no date only as an observation
-   (undated tasks are legal). Check that task lines found by `read_note` match
-   the states and lines reported by `list_tasks`.
+4. **Tasks** — use `list_tasks` with `due: "overdue"` to count overdue open
+   work. Also use `list_tasks` with `states: ["all"]` to find `note_missing`
+   links and report their task IDs. Mention `task_migration_required` if present
+   in `vault_info`. Standalone and undated tasks are valid; checklists are separate.
 5. **PARA hygiene** — flag notes tagged `status-done` still in Projects,
    project notes without a definition-of-done section, Inbox captures older
    than the user's chosen age (default 14 days), and dated project work that
