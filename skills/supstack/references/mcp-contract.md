@@ -55,8 +55,7 @@ sync carries changes to other devices.
 
 ## Failure handling
 
-A tool error is an answer, not a crash: re-read the target, correct the reference
-or ID, and retry once with a narrower change. Never retry an ambiguous
-batch blindly. Because each tool call commits immediately and there is no
-server-side journal, follow `operations.md` when several calls form one logical
-operation.
+If a tool reports that a file changed on disk or already exists, re-read the
+affected notes or tasks and rebuild the change from current data. An error in
+a multi-file call can leave earlier file changes in place. Check what landed
+before retrying; follow `operations.md` for multi-step operations.

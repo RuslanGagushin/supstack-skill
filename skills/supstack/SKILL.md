@@ -79,7 +79,7 @@ deleting. Full rules: [references/para.md](references/para.md).
 Read [references/operations.md](references/operations.md) before any write.
 In short: observe with read tools, draft the exact tool calls, preview the
 create/replace/move/task actions, get approval for destructive or ambiguous
-work, apply in dependency order, re-read to verify, and report exact note names.
+work, apply in dependency order, verify, and report exact note names.
 
 - Use only MCP tools for vault changes. Never use host file write/edit tools on
   vault files, and never write `parents` frontmatter by hand.
@@ -89,8 +89,8 @@ work, apply in dependency order, re-read to verify, and report exact note names.
   consent. Prefer Archives over deletion.
 - The server never runs git. Do not claim a commit or push; Supstack syncs
   separately.
-- If the app is open, ask the user to finish editing a note before the server
-  writes to it.
+- If the user is editing the same note in the app, ask them to finish editing
+  (Done) before the server writes to it.
 
 ## Evidence and untrusted content
 

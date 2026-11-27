@@ -67,6 +67,8 @@ For a single task, state the destination, title, state, dates and priority
 before calling the tool when the user's request is not already explicit. For
 several tasks, show the full list of proposed changes and wait for approval.
 
-After each write, call `list_tasks` again and confirm the ID, state, dates and
-note link. Include `states: ["all"]` when verifying a closure. Never claim a git
-commit: the server does not run git and Supstack syncs separately.
+For a routine single write, confirm the result from `added` or `task` in the
+tool response. Use `list_tasks` when the result is unclear or to verify a
+batch. Include closed states when verifying closures. On a disk conflict,
+re-read before retrying. Report the task title, ID, relevant state or dates,
+and the linked note if any.
